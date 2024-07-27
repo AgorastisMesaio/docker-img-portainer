@@ -27,7 +27,7 @@ networks:
 
 services:
   ct_portainer:
-    image: sw-luis-palacios/base-portainer:main
+    image: ghcr.io/sw-luis-palacios/base-portainer:main
     hostname: portainer
     container_name: ct_portainer
     restart: always
