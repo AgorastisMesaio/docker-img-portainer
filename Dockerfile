@@ -1,4 +1,4 @@
-# Dockerfile for NetKit
+# Dockerfile for Portainer
 #
 # This Dockerfile sets up a standard Portainer container that you can use
 # inside your docker compose projects or standalone
