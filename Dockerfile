@@ -5,7 +5,8 @@
 #
 
 # Set fixed portainer image
-FROM portainer/portainer-ce:latest
+#FROM portainer/portainer-ce:latest
+FROM portainer/portainer-ce:2.20.3
 
 # Set default admin password to "super_password".
 # Command to get the password: htpasswd -nb -B admin super_password | cut -d ":" -f 2
