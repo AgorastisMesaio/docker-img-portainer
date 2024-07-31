@@ -1,6 +1,6 @@
 # Docker portainer
 
-![GitHub action workflow status](https://github.com/SW-Luis-Palacios/base-portainer/actions/workflows/docker-publish.yml/badge.svg)
+![GitHub action workflow status](https://github.com/AgorastisMesaio/docker-img-portainer/actions/workflows/docker-publish.yml/badge.svg)
 
 This repository contains a `Dockerfile` aimed to create a *base image* to provide a Portainer service that you can use inside your docker compose projects or standalone. Portainer is a lightweight management UI which allows you to easily manage your different Docker environments (Docker hosts or Swarm clusters). Portainer is meant to be as simple to deploy as it is to use..
 
@@ -27,7 +27,7 @@ networks:
 
 services:
   ct_portainer:
-    image: ghcr.io/sw-luis-palacios/base-portainer:main
+    image: ghcr.io/agorastismesaio/docker-img-portainer:main
     hostname: portainer
     container_name: ct_portainer
     restart: always
@@ -72,11 +72,11 @@ If you copy or fork this project to create your own base image.
 To build the Docker image, run the following command in the directory containing the Dockerfile:
 
 ```sh
-docker build -t your-image/base-portainer:main .
+docker build -t your-image/docker-img-portainer:main .
 ```
 
 ### Troubleshoot
 
 ```sh
-docker run --rm --name ct_portainer --hostname portainer -p 9000:9000 your-image/base-portainer:main
+docker run --rm --name ct_portainer --hostname portainer -p 9000:9000 your-image/docker-img-portainer:main
 ```

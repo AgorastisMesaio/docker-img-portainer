@@ -6,7 +6,7 @@ volumes:
 
 services:
   ct_portainer:
-    image: sw-luis-palacios/base-portainer:main
+    image: agorastismesaio/docker-img-portainer:main
     hostname: portainer
     container_name: ct_portainer
     restart: always
