@@ -21,4 +21,3 @@ services:
       # Access to docker's internals
       - /var/run/docker.sock:/var/run/docker.sock
       - pt_portainer_data:/data
-
