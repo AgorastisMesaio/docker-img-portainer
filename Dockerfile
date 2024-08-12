@@ -3,10 +3,15 @@
 # This Dockerfile sets up a standard Portainer container that you can use
 # inside your docker compose projects or standalone
 #
-
 # Set fixed portainer image
-#FROM portainer/portainer-ce:latest
-FROM portainer/portainer-ce:2.20.3
+FROM portainer/portainer-ce:2.20.3-alpine
+
+# Update and install curl
+RUN apk update && apk add --no-cache curl
+
+# Copy healthcheck
+ADD healthcheck.sh /healthcheck.sh
+RUN chmod +x /healthcheck.sh
 
 # My custom health check
 # I'm calling /healthcheck.sh so my container will report 'healthy' instead of running
@@ -15,7 +20,7 @@ FROM portainer/portainer-ce:2.20.3
 # --start-period=3s: Wait time before first check. Gives the container some time to start up.
 # --retries=3: Retry check 'retries' times before considering the container as unhealthy.
 HEALTHCHECK --interval=30s --timeout=10s --start-period=3s --retries=3 \
-  CMD curl http://localhost:9000/api/system/status > /dev/null 2>&1 || exit $?
+  CMD /healthcheck.sh || exit $?
 
 # Default portainer web port
 EXPOSE 9000
