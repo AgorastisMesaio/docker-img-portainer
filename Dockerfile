@@ -4,7 +4,7 @@
 # inside your docker compose projects or standalone
 #
 # Set fixed portainer image
-FROM portainer/portainer-ce:2.20.3-alpine
+FROM portainer/portainer-ce:2.32.0-alpine
 
 # Update and install curl
 RUN apk update && apk add --no-cache curl
